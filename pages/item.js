@@ -1,6 +1,9 @@
 import view from '../utils/view.js'
-import Story from '../components/Story.js'
 import baseUrl from '../utils/baseUrl.js'
+import Story from '../components/Story.js'
+import Comment from '../components/Comment.js'
+
+
 
 export default async function Item(){
   let story = null
@@ -24,7 +27,7 @@ export default async function Item(){
     ${Story(story)}
   </div>
   <hr />
-  ${hasComments ? story.comments.map(comment => JSON.stringify(comment)).join('') : 'No comments...'}
+  ${hasComments ? story.comments.map(comment => Comment(comment)).join('') : 'No comments...'}
   `
 }
 
